@@ -44,3 +44,8 @@ INSERT INTO Subject (subject_id, subject_name, professor_id, classroom_id, subje
 (1, 'Computer Science', 1, 1, 'major', 3, 2024, 1, 'Mon', '09:00:00', '11:00:00', 30, 25),
 (2, 'Biology', 2, 3, 'general', 2, 2024, 1, 'Wed', '13:00:00', '15:00:00', 25, 20);
 
+-- Users 테이블에 데이터 삽입
+INSERT INTO users (username, password, role) VALUES
+('20241101', '1111', 'STUDENT'),
+('20241102', '2222', 'STUDENT');
+
