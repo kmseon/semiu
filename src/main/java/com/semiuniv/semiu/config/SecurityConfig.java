@@ -26,10 +26,10 @@ public class SecurityConfig {
 //                        .anyRequest().authenticated())
 
                 .formLogin((form)->form
-                        .loginPage("/")
+                        .loginPage("/semi")
                         .loginProcessingUrl("/login")
 //                        .usernameParameter("email")
-                        .defaultSuccessUrl("/login", true))
+                        .defaultSuccessUrl("/semi/login", true))
 
                 .logout((out)->out
                         .logoutSuccessUrl("/")

@@ -24,7 +24,11 @@
         <!--nav : home | 수강 | 성적 : 페이지 이동-->
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a th:href="@{/semi/application}" class="nav-link px-2">수강</a></li>
+            <li th:each="student : ${studentLogin}" th:object="${student}">
+<!--                로그아웃 상태 시에도 성적 보이게 할 것-->
+                <a th:if="${student == null}" th:href="@{/semi/application}" class="nav-link px-2">수강</a>
+                <a  th:unless="${student == null}" th:href="@{/semi/application/{id}(id=*{id})}" class="nav-link px-2">수강</a>
+            </li>
             <!--<li><a sec:authorize="isAuthenticated()" th:href="@{/lecture/application/{username}(username=*{username})}" class="nav-link px-2">수강</a></li>-->
             <li><a href="#" class="nav-link px-2">성적</a></li>
         </ul>
