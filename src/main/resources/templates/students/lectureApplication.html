@@ -5,7 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<<<<<<< HEAD
     <script type="text/javascript" th:src="@{/js/form.js}" ></script>
+=======
+>>>>>>> origin/kmseon
 </head>
 <body>
 <div class="content" layout:fragment="content">
@@ -46,6 +49,7 @@
             <!--과목List Get-->
             <table class="table" >
                 <tr>
+<<<<<<< HEAD
                     <th>ID</th>
                     <th>이름</th>
                     <th>학과</th>
@@ -131,5 +135,84 @@
         </div>
     </div>
 </div>
+=======
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>학년</th>
+                    <th>반</th>
+                    <th>번호</th>
+                    <th>성별</th>
+                    <th>전화번호</th>
+                    <th>주소</th>
+                </tr>
+                <tr th:each="listDto : ${studentDtoList}" th:object="${listDto}">
+                    <td th:text="*{studentNo}"></td>
+                    <td th:text="*{name}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,0,1)}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,1,3)}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,3)}"></td>
+                    <td th:switch="${#strings.toString(listDto.gender)}">
+                        <span th:case="M">남</span>
+                        <span th:case="F">여</span>
+                    </td>
+                    <td th:text="*{phone}"></td>
+                    <td th:text="*{address}"></td>
+                </tr>
+            </table>
+
+        <!--수강신청 Form-->
+        <div class="lectureApplicationForm">
+        <h1>수강 신청</h1>
+            <!--과목List Get-->
+            <table class="table" >
+                <tr>
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>학년</th>
+                    <th>반</th>
+                    <th>번호</th>
+                    <th>성별</th>
+                    <th>전화번호</th>
+                    <th>주소</th>
+                </tr>
+                <tr th:each="listDto : ${studentDtoList}" th:object="${listDto}">
+                    <td th:text="*{studentNo}"></td>
+                    <td th:text="*{name}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,0,1)}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,1,3)}"></td>
+                    <td th:text="${#strings.substring(listDto.studentNo,3)}"></td>
+                    <td th:switch="${#strings.toString(listDto.gender)}">
+                        <span th:case="M">남</span>
+                        <span th:case="F">여</span>
+                    </td>
+                    <td th:text="*{phone}"></td>
+                    <td th:text="*{address}"></td>
+                </tr>
+            </table>
+        <!--신청항목 Post-->
+        <form th:action="@{/academicManagementView/insert}" method="post" class="container" >
+            <h1>수강 신청 내역</h1>
+            <div class="mb3">
+                <label class="form-label">학번</label>
+            </div>
+            <div class="mb3">
+                <label class="form-label">국어 점수</label>
+            </div>
+            <div class="mb3">
+                <label class="form-label">수학 점수</label>
+            </div>
+            <div class="mb3">
+                <label class="form-label">영어 점수</label>
+            </div>
+            <div class="mb3">
+                <label class="form-label">역사 점수</label>
+            </div>
+            <input type="submit" value="저장" class="btn btn-primary">
+        </form>
+    </div>
+
+    </div>
+    </div>
+>>>>>>> origin/kmseon
 </body>
 </html>

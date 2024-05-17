@@ -26,10 +26,17 @@ public class SecurityConfig {
 //                        .anyRequest().authenticated())
 
                 .formLogin((form)->form
+<<<<<<< HEAD
                         .loginPage("/semi")
                         .loginProcessingUrl("/login")
 //                        .usernameParameter("email")
                         .defaultSuccessUrl("/semi/login", true))
+=======
+                        .loginPage("/")
+                        .loginProcessingUrl("/login")
+//                        .usernameParameter("email")
+                        .defaultSuccessUrl("/login", true))
+>>>>>>> origin/kmseon
 
                 .logout((out)->out
                         .logoutSuccessUrl("/")

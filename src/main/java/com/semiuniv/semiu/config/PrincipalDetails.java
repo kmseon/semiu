@@ -2,7 +2,10 @@ package com.semiuniv.semiu.config;
 
 import com.semiuniv.semiu.entity.Users;
 import org.springframework.security.core.GrantedAuthority;
+<<<<<<< HEAD
 import org.springframework.security.core.userdetails.User;
+=======
+>>>>>>> origin/kmseon
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
@@ -27,37 +30,61 @@ public class PrincipalDetails implements UserDetails {
 
     @Override
     public String getPassword() {
+<<<<<<< HEAD
 
         return users.getPassword();
+=======
+        return null;
+>>>>>>> origin/kmseon
     }
 
     @Override
     public String getUsername() {
+<<<<<<< HEAD
 
         return String.valueOf(users.getId());
+=======
+        return null;
+>>>>>>> origin/kmseon
     }
 
     @Override
     public boolean isAccountNonExpired() {
+<<<<<<< HEAD
 
         return true;
+=======
+        return false;
+>>>>>>> origin/kmseon
     }
 
     @Override
     public boolean isAccountNonLocked() {
+<<<<<<< HEAD
 
         return true;
+=======
+        return false;
+>>>>>>> origin/kmseon
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
+<<<<<<< HEAD
 
         return true;
+=======
+        return false;
+>>>>>>> origin/kmseon
     }
 
     @Override
     public boolean isEnabled() {
+<<<<<<< HEAD
 
         return true;
+=======
+        return false;
+>>>>>>> origin/kmseon
     }
 }

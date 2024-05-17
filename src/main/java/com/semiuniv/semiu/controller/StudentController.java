@@ -31,6 +31,7 @@ public class StudentController {
 
 
     //수강 신청 페이지 : username로 이동 (조건 : 로그인 후)
+<<<<<<< HEAD
     @GetMapping("application/{id}")
     public String lectureApplicationView(@PathVariable("id") Integer id, Model model){
         //로그인한 학생 정보
@@ -45,4 +46,10 @@ public class StudentController {
         return "students/lectureApplication";
     }
 
+=======
+    @GetMapping("application")
+    public String lectureApplicationView(Model model){
+        return "students/lectureApplication";
+    }
+>>>>>>> origin/kmseon
 }
